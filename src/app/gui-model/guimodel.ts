@@ -185,6 +185,12 @@ export class GuiModel {
                             "color": "wisteria", 
                             "page": "groupspage", 
                         },
+                        { 
+                            "type": "button", 
+                            "name": "Activities", 
+                            "icon": "car", 
+                            "color": "wisteria", 
+                            "green": "activitiespage", },
                     ]
                 },
                 {
