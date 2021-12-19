@@ -11,7 +11,7 @@ export class GuiModel {
                 {
                     "id": "FriendForm",
                     "title": "Friend",
-                    "url": "/friend/:friendKey/activity",
+                    "url": "/friend",
                     "formFieldList": [
                         {
                             "id": "familyName",
@@ -88,7 +88,7 @@ export class GuiModel {
                 {
                     "id": "LocationForm",
                     "title": "Location",
-                    "url": "/location/:locationKey/activity",
+                    "url": "/location",
                     "formFieldList": [
                         {
                             "id": "name",
@@ -241,7 +241,7 @@ export class GuiModel {
                             "type": "button", 
                             "name": "Activities", 
                             "icon": "fa-angellist", 
-                            "color": "green", 
+                            "color": "pink", 
                             "page": "activitiespage", },
                     ]
                 },
@@ -266,10 +266,42 @@ export class GuiModel {
                             "color": "blue",
                             "search": true,
                             "url": "/friend",
+                            "page": "friendpage",
+                        },
+                    ]
+                },
+                {
+                    "id": "friendpage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "button",
+                            "name": "EditFriend",
+                            "icon": "fa-user",
+                            "color": "green",
                             "form": {
                                 "form": "FriendForm"
                             }
                         },
+                        
+                        {
+                            "type": "button",
+                            "name": "AddActivity",
+                            "icon": "fa-angellist",
+                            "color": "orange",
+                            "form": {
+                                "form": "ActivityForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-angellist",
+                            "color": "green",
+                            "search": true,
+                            "url": "/friend/:friendKey/activity",
+                        }
                     ]
                 },
                 {
@@ -294,8 +326,25 @@ export class GuiModel {
                             "color": "blue",
                             "search": true,
                             "url": "/location",
+                            "page": "locationpage",
+                        },
+                    ]
+                },
+                {
+                    "id": "locationpage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        
+                        {
+                            "type": "list",
+                            "icon": "fa-home",
+                            "color": "blue",
+                            "search": true,
+                            "url": "/location/:locationKey/activity",
                             "form": {
-                                "form": "LocationForm"
+                                "form": "ActivityForm"
                             }
                         },
                     ]
@@ -310,7 +359,7 @@ export class GuiModel {
                             "type": "newButton",
                             "name": "NewActivity",
                             "icon": "fa-angellist",
-                            "color": "pink",
+                            "color": "green",
                             "width": 2,
                             "form": {
                                 "form": "ActivityForm"
@@ -322,6 +371,22 @@ export class GuiModel {
                             "color": "pink",
                             "search": true,
                             "url": "/activity",
+                            "page": "activitypage",
+                        },
+                    ]
+                },
+                {
+                    "id": "activitypage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-angellist",
+                            "color": "pink",
+                            "search": true,
+                            "url": "/activity/:activityKey/friend",
                             "form": {
                                 "form": "ActivityForm"
                             }
@@ -331,16 +396,6 @@ export class GuiModel {
                 { 
                     "id": "groupspage", 
                     "elementList": [ 
-                        {
-                            "type": "list",
-                            "icon": "fa-weixin",
-                            "color": "wisteria",
-                            "search": true,
-                            "url": "/group",
-                            "form": {
-                            "form": "GroupForm"
-                            }
-                            },
                         { 
                             "type": "backbutton", 
                         }, 
@@ -352,7 +407,18 @@ export class GuiModel {
                             "form": { 
                             "form": "GroupForm" 
                             } 
-                        } 
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-weixin",
+                            "color": "wisteria",
+                            "search": true,
+                            "url": "/group",
+                            "form": {
+                            "form": "GroupForm"
+                            }
+                            },
+                       
                     ] 
                 }
             ]
