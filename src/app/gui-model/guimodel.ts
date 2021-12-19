@@ -50,6 +50,14 @@ export class GuiModel {
                             "width": 2
                         },
                         {
+                            "id":   "activity",
+                            "type": "autocomplete",
+                            "name": "Activity",
+                            "url": "/activity",
+                            "form": "ActivityForm",
+                            "width": 2
+                        },
+                        {
                             "id": "birthdate",
                             "type": "date",
                             "name": "Birthday",
@@ -90,6 +98,14 @@ export class GuiModel {
                             "required": true
                         },
                         {
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
+                        },
+                        {
                             "type": "deleteButton",
                             "name": "Delete"
                         },
@@ -117,6 +133,20 @@ export class GuiModel {
                             "readonly": true,
                             "form": "ActivityForm",
                             "width": 2
+                        },
+                        {
+                            "id": "date",
+                            "type": "date",
+                            "name": "Date",
+                            "width": 2
+                        },
+                        {
+                            "id": "comment",
+                            "type": "text",
+                            "name": "Comments",
+                            "width": 2,
+                            "height": 4,
+                            "maxLength": 5000,
                         },
                         {
                             "type": "deleteButton",
@@ -173,6 +203,13 @@ export class GuiModel {
                         },
                         {
                             "type": "button",
+                            "name": "Activities",
+                            "icon": "fa-angellist",
+                            "color": "pink",
+                            "page": "activitiespage",
+                        },
+                        {
+                            "type": "button",
                             "name": "Location",
                             "icon": "fa-cubes",
                             "color": "yellow",
@@ -188,9 +225,9 @@ export class GuiModel {
                         { 
                             "type": "button", 
                             "name": "Activities", 
-                            "icon": "car", 
-                            "color": "wisteria", 
-                            "green": "activitiespage", },
+                            "icon": "fa-angellist", 
+                            "color": "green", 
+                            "page": "activitiespage", },
                     ]
                 },
                 {
@@ -248,7 +285,34 @@ export class GuiModel {
                         },
                     ]
                 },
-
+                {
+                    "id": "activitiespage",
+                    "elementList": [
+                        {
+                            "type": "backbutton",
+                        },
+                        {
+                            "type": "newButton",
+                            "name": "NewActivity",
+                            "icon": "fa-angellist",
+                            "color": "pink",
+                            "width": 2,
+                            "form": {
+                                "form": "ActivityForm"
+                            }
+                        },
+                        {
+                            "type": "list",
+                            "icon": "fa-angellist",
+                            "color": "pink",
+                            "search": true,
+                            "url": "/activity",
+                            "form": {
+                                "form": "ActivityForm"
+                            }
+                        },
+                    ]
+                },
                 { 
                     "id": "groupspage", 
                     "elementList": [ 
@@ -271,7 +335,7 @@ export class GuiModel {
                             "icon": "fa-weixin", 
                             "color": "green", 
                             "form": { 
-                                "form": "GroupForm" 
+                            "form": "GroupForm" 
                             } 
                         } 
                     ] 
