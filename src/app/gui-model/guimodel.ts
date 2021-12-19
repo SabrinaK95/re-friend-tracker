@@ -11,7 +11,7 @@ export class GuiModel {
                 {
                     "id": "FriendForm",
                     "title": "Friend",
-                    "url": "/friend",
+                    "url": "/friend/:friendKey/activity",
                     "formFieldList": [
                         {
                             "id": "familyName",
@@ -88,7 +88,7 @@ export class GuiModel {
                 {
                     "id": "LocationForm",
                     "title": "Location",
-                    "url": "/location",
+                    "url": "/location/:locationKey/activity",
                     "formFieldList": [
                         {
                             "id": "name",
@@ -122,7 +122,7 @@ export class GuiModel {
                 {
                     "id": "ActivityForm",
                     "title": "Activity",
-                    "url": "/friend/:friendKey/activity",
+                    "url": "/activity/:activityKey/friend",
                     "formFieldList": [
                         {
                             "id":   "activity",
@@ -174,6 +174,20 @@ export class GuiModel {
                              "width": 2, 
                              "required": true 
                             }, 
+                            {
+                                "id": "creationdate",
+                                "type": "date",
+                                "name": "Creation Date",
+                                "width": 2
+                            },
+                            {
+                                "id": "comment",
+                                "type": "text",
+                                "name": "Comments",
+                                "width": 2,
+                                "height": 4,
+                                "maxLength": 5000,
+                            },
                             { 
                                 "type": "deleteButton", 
                                 "name": "Delete" 
