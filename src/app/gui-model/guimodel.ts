@@ -149,6 +149,14 @@ export class GuiModel {
                             "maxLength": 5000,
                         },
                         {
+                            "id":   "location",
+                            "type": "autocomplete",
+                            "name": "Location",
+                            "url": "/location/:locationKey/activity",
+                            "form": "LocationForm",
+                            "width": 2
+                        },
+                        {
                             "type": "deleteButton",
                             "name": "Delete"
                         },
