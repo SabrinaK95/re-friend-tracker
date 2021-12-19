@@ -225,13 +225,6 @@ export class GuiModel {
                         },
                         {
                             "type": "button",
-                            "name": "Activities",
-                            "icon": "fa-angellist",
-                            "color": "pink",
-                            "page": "activitiespage",
-                        },
-                        {
-                            "type": "button",
                             "name": "Location",
                             "icon": "fa-cubes",
                             "color": "yellow",
